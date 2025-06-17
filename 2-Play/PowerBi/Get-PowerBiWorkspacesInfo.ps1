@@ -1,6 +1,6 @@
 ### retrouver les lineage d'un dataset en utilisant le graph via une requete rest
 # nécessite d'avoir les permissions suivantes : 
-# tenant.read.all
+# tenant.read.all, workspace.read.all
 
 
 $headers = @{
