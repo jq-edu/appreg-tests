@@ -26,8 +26,12 @@ $result
 
 # get scan status for the workspace information scan
 $uri = "$powerBiBaseUrl/admin/workspaces/scanStatus/$($result.id)"
-$scanStatus = Invoke-RestMethod -Uri $uri -Headers $headers -Method Get
-$scanStatus
+# call and wait for the scan to complete
+while ($scanStatus.status -ne "Succeeded") {
+    Start-Sleep -Seconds 10
+    $scanStatus = Invoke-RestMethod -Uri $uri -Headers $headers -Method Get
+    Write-Host "Current scan status: $($scanStatus.status)"
+}
 
 # get scan result for the workspace information scan - must wait Succeeded status from previous step
 $uri = "$powerBiBaseUrl/admin/workspaces/scanResult/$($scanStatus.id)"
