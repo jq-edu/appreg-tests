@@ -15,13 +15,14 @@
 
 .NOTES
     Auteur: Joël Quimper
-    Date: 2024-12-02
+    Date: 2025-06-17
 #>
 # definition des variables pour le graph
 $tenantId = "your-tenant-id"
 $clientId = "your-client-id"
 $clientSecret = "your-client-secret"
 $graphBaseUrl = "https://graph.microsoft.com/v1.0"
+$powerBiBaseUrl = "https://api.powerbi.com/v1.0/myorg"
 
 # Importation des modules Microsoft Graph
 $graphVersion = "2.25.0"
